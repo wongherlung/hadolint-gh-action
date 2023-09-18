@@ -64,7 +64,7 @@ runs:
         annotate: ${{ inputs.annotate }}
         output_format: ${{ inputs.output_format }}
         version: ${{ inputs.version }}
-      run: hadolint.sh
+      run: ${{ github.action_path }}/hadolint.sh
 
 branding:
   icon: "check"
