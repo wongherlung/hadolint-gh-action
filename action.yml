@@ -43,6 +43,8 @@ outputs:
 runs:
   using: composite
   steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
     - name: Download hadolint and make it available in path
       shell: bash
       run: |
@@ -62,7 +64,7 @@ runs:
         annotate: ${{ inputs.annotate }}
         output_format: ${{ inputs.output_format }}
         version: ${{ inputs.version }}
-      run: ${{ github.action_path }}/hadolint.sh
+      run: hadolint.sh
 
 branding:
   icon: "check"
