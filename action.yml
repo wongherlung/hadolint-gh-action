@@ -53,7 +53,7 @@ runs:
         curl -L -s -o ${{ github.action_path }}/bin/hadolint \
           "https://github.com/hadolint/hadolint/releases/download/v${{ inputs.version }}/hadolint-Linux-x86_64"
         chmod +x ${{ github.action_path }}/bin/hadolint
-        echo "${{ github.action_path }}/bin" >> "${GITHUB_PATH}"
+        echo "${GITHUB_ACTION_PATH}/bin" >> "${GITHUB_PATH}"
     - name: Invoke hadolint.sh
       id: run
       shell: bash
